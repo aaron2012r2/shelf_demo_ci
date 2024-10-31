@@ -86,10 +86,8 @@ def get_llm_provider_options() -> list[str]:
     Returns the list of available LLM providers based on environment variables.
     """
     options = []
-    if st.secrets["keys_and_stuff"]["AZURE_OPENAI_API_KEY"]:
+    if 1==1:
         options.append("Azure OpenAI")
-    if st.secrets["keys_and_stuff"]["OPENAI_API_KEY"]:
-        options.append("OpenAI")
     if len(options) == 0:
         raise ValueError(
             "Please provide a valid API key for the OpenAI API or Azure OpenAI API in the environment variables."
