@@ -1,0 +1,10 @@
+runtime: custom
+env: flex
+entrypoint: streamlit run app.py --server.address 0.0.0.0 --server.port $PORT
+handlers:
+- url: /.*
+  script: auto
+network:
+  session_affinity: true  # Essential for WebSockets
+
+instance_class: F4
